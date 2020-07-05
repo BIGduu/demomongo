@@ -28,7 +28,7 @@ import java.util.function.ObjDoubleConsumer;
 public class BeforeSaveListener extends AbstractMongoEventListener<Object> {
 
     private final MongoOperations mongoOperations;
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     public BeforeSaveListener(MongoOperations mongoOperations) {
         this.mongoOperations = mongoOperations;

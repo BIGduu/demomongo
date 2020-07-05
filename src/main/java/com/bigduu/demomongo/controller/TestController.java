@@ -2,8 +2,6 @@ package com.bigduu.demomongo.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.codemodel.internal.util.UnicodeEscapeWriter;
-import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,38 +33,19 @@ public class TestController {
     }
     // 字符串读取
     // 方法一
-    public static String readAsChars(HttpServletRequest request)
-    {
+    public static String readAsChars(HttpServletRequest request) {
 
-        BufferedReader br = null;
+        BufferedReader br;
         StringBuilder sb = new StringBuilder("");
-        try
-        {
+        try {
             br = request.getReader();
             String str;
-            while ((str = br.readLine()) != null)
-            {
+            while ((str = br.readLine()) != null) {
                 sb.append(str);
             }
             br.close();
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally
-        {
-            if (null != br)
-            {
-                try
-                {
-                    br.close();
-                }
-                catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
-            }
         }
         return sb.toString();
     }

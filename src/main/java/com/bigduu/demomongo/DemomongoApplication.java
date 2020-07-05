@@ -5,7 +5,6 @@ import com.bigduu.demomongo.entity.User;
 import com.bigduu.demomongo.repository.DepartmentRepository;
 import com.bigduu.demomongo.repository.UserRepository;
 import com.bigduu.demomongo.repository.impl.BaseRepositoryEnhanceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -46,12 +45,6 @@ public class DemomongoApplication  implements CommandLineRunner {
         departmentRepository.insert(department);
     }
 
-/*
-        Optional<Department> byId = departmentRepository.findById("5eaf2979fa68eb55a5b0fdf6");
-        Department department = byId.orElse(null);
-        System.out.println("");
-*//*
 
-    }
-*/
+
 }
